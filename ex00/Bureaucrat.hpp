@@ -22,7 +22,13 @@ class   Bureaucrat
         class   GradeTooHighException : public std::exception
         {
             public:
-                virtual const char *what() const;
-        }
+                virtual const char *what() const throw();
+        };
+        class   GradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw();
+        };
 };
+std::ostream& operator << (std::ostream& out, const Bureaucrat &_Bureaucrat);
 #endif
