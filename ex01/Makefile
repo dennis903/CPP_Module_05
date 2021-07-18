@@ -1,8 +1,9 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
-TARGET = Bureaucrat
+TARGET = ex01
 
 OBJS = Bureaucrat.cpp 	\
+		Form.cpp \
 		main.cpp
 
 all : $(TARGET)

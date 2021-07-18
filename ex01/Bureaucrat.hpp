@@ -3,6 +3,9 @@
 # include <iostream>
 # include <string>
 # include <exception>
+# include "Form.hpp"
+
+class   Form;
 
 class   Bureaucrat
 {
@@ -29,6 +32,7 @@ class   Bureaucrat
             public:
                 virtual const char *what() const throw();
         };
+        void    signForm(Form &_Form) const;
 };
 std::ostream& operator << (std::ostream& out, const Bureaucrat &_Bureaucrat);
 #endif
