@@ -36,7 +36,21 @@ class   Form
             public:
                 virtual const char *what() const throw();
         };
+
+        class DoesNotSignedException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw();
+        };
+
+        class ExecuteGradeTooLowException : public std::exception
+        {
+            public:
+                virtual const char *what() const throw();
+        };
         void    beSigned(const Bureaucrat &_Bureaucrat);
+        virtual void    execute(Bureaucrat const & executor) const = 0;
+
 };
 std::ostream &operator << (std::ostream &out, const Form &_Form);
 #endif
