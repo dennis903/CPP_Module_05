@@ -1,10 +1,13 @@
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
-TARGET = ex01
+TARGET = ex02
 
 OBJS = Bureaucrat.cpp 	\
 		Form.cpp \
-		main.cpp
+		PresidentialPardonForm.cpp	\
+		RobotomyRequestForm.cpp	\
+		ShrubberyCreationForm.cpp	\
+		main.cpp	\
 
 all : $(TARGET)
 

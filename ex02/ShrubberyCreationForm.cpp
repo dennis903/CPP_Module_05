@@ -1,10 +1,14 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : target("No name"), Form("Shrubbery", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm() : 
+Form("Shrubbery", 145, 137),
+target("No name") 
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &_target) : target(_target), Form("Shrubbery", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &_target) :
+Form("Shrubbery", 145, 137),
+target(_target) 
 {
 }
 
@@ -33,18 +37,18 @@ std::string ShrubberyCreationForm::getTarget() const
 void    ShrubberyCreationForm::Act() const
 {
     std::ofstream file(this->target + "_Shrubbery");
-file << "     /\\      ";
-file <<"     /\\       ";
-file <<"    /  \\      ";
-file <<"    /~~\\o     ";
-file <<"   /o   \\     ";
-file <<"  /~~*~~~\\    ";
-file <<" o/    o \\    ";
-file <<" /~~~~~~~~\\~` ";
-file <<"/__*_______\\  ";
-file <<"     ||        ";
-file <<"   \\====/     ";
-file <<"    \\__/      ";
+file << "     /\\      \n";
+file <<"     /\\       \n";
+file <<"    /  \\      \n";
+file <<"    /~~\\o     \n";
+file <<"   /o   \\     \n";
+file <<"  /~~*~~~\\    \n";
+file <<" o/    o \\    \n";
+file <<" /~~~~~~~~\\~` \n";
+file <<"/__*_______\\  \n";
+file <<"     ||        \n";
+file <<"   \\====/     \n";
+file <<"    \\__/      \n";
     file.close();
 }
 

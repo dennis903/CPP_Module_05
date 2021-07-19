@@ -1,35 +1,97 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int     main()
 {
-    std::cout << "========= test <signForm> =========" << std::endl;
-    std::cout << "<Success case>" << std::endl;
+    std::cout << "=============ShrubberyCreationForm test=============" << std::endl;
     try
     {
-        Bureaucrat buro("test1", 20);
-        Form buro_form("test1_form", 50, 10);
-        buro.signForm(buro_form);
+        std::cout << "< Buro cannot be signed >" << std::endl;
+        Bureaucrat failed("hyeolee", 146);
+        ShrubberyCreationForm Shrubbery("home");
+        failed.signForm(Shrubbery);
+        failed.executeForm(Shrubbery);
     }
-    catch(std::exception &e)
+    catch (std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
-    std::cout << "<Failed case>" << std::endl;
     try
     {
-        Bureaucrat buro("test1_fail", 30);
-        Form buro_form("test1_fail_form", 10, 5);
-        buro.signForm(buro_form);
+        std::cout << "< Buro is signed but cannot execute >" << std::endl;
+        Bureaucrat failed2("hyeolee", 143);
+        ShrubberyCreationForm Shrubbery("White house");
+        failed2.signForm(Shrubbery);
+        failed2.executeForm(Shrubbery);
     }
-    catch(std::exception &e)
+    catch (std::exception &e)
     {
         std::cerr << e.what() << std::endl;
     }
-
-    Bureaucrat buro("test2", 150);
-    Form buro_form("tset2_form", 60, 30);
-    std::cout << buro << std::endl;
-    std::cout << buro_form << std::endl;
+    std::cout << "<Buro is success to execute>" << std::endl;
+    try
+    {
+        Bureaucrat success("hyeolee", 133);
+        ShrubberyCreationForm Shrubbery("Blue house");
+        success.signForm(Shrubbery);
+        success.executeForm(Shrubbery);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=============RobotomyRequestForm==============" << std::endl;
+    try
+    {
+        std::cout << "John's grade : 53" << std::endl;
+        RobotomyRequestForm Robotomy("home");
+        Bureaucrat John("John", 53);
+        John.signForm(Robotomy);
+        John.executeForm(Robotomy);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    try
+    {
+        std::cout << "Micheal's grade : 33" << std::endl;
+        RobotomyRequestForm Robotomy("home");
+        Bureaucrat Micheal("Micheal", 33);
+        Micheal.signForm(Robotomy);
+        Micheal.executeForm(Robotomy);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "==============PresidentialPardonForm===========" << std::endl;
+    try
+    {
+        std::cout << "Obama's grade : 26" << std::endl;
+        PresidentialPardonForm Presidential("White house");
+        Bureaucrat Obama("Obama", 26);
+        Obama.signForm(Presidential);
+        Obama.executeForm(Presidential);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    try
+    {
+        std::cout << "Trump's grade : 4" << std::endl;
+        PresidentialPardonForm Presidential("White house");
+        Bureaucrat Trump("Trump", 4);
+        Trump.signForm(Presidential);
+        Trump.executeForm(Presidential);
+    }
+    catch (std::exception &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
     return (0);
 }
