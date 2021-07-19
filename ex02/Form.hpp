@@ -50,6 +50,7 @@ class   Form
         };
         void    beSigned(const Bureaucrat &_Bureaucrat);
         virtual void    execute(Bureaucrat const & executor) const = 0;
+        virtual void    Act() const = 0;
 
 };
 std::ostream &operator << (std::ostream &out, const Form &_Form);
