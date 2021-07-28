@@ -27,6 +27,7 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat &_Bureaucrat)
     if (this == &_Bureaucrat)
         return (*this);
     this->grade = _Bureaucrat.grade;
+    return (*this);
 }
 
 const std::string     Bureaucrat::getName() const

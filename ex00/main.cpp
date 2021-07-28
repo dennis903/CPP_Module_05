@@ -50,9 +50,11 @@ int     main()
         std::cout << "=========== Copy constructor ========" << std::endl;
         try
         {
-            Bureaucrat buro("why", 144);
+            Bureaucrat buro("Tim", 144);
             std::cout << buro << std::endl;
             Bureaucrat copy(buro);
+            std::cout << "<Copy>" << std::endl;
+            std::cout << copy << std::endl;
         }
         catch (std::exception &e)
         {

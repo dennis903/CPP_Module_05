@@ -1,5 +1,5 @@
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
 TARGET = Bureaucrat
 
 OBJS = Bureaucrat.cpp 	\
@@ -15,5 +15,5 @@ clean :
 
 fclean : clean
 	rm -rf $(TARGET)
-
-re : clean all%
+	rm -rf $(TARGET).dSYM
+re : clean all
